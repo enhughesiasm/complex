@@ -1,0 +1,928 @@
+$showTraitDuration: 2.5;
+$moveTraitAmountPixels: 40;
+$navHeight: 3rem;
+
+$danger: #ef476f;
+$dangerFaded: rgba(239, 71, 111, 0.5); // #EF476F;
+$dangerVeryFaded: rgba(239, 71, 111, 0.2); // #EF476F;
+$success: #06d6a0;
+$successFaded: rgba(6, 214, 160, 0.4); // #06D6A0;
+$warning: #ffd166;
+$warningFaded: rgba(255, 209, 102, 0.9); // #FFD166;;
+$warningVeryFaded: rgba(255, 209, 102, 0.3); // #FFD166;;
+$info: #118ab2;
+$infoFaded: rgba(17, 138, 178, 0.2);
+$dark: #363636;
+$light: #073b4c;
+
+@keyframes fadeInOut {
+	0% {
+		opacity: 0;
+	}
+	16% {
+		opacity: 1;
+	}
+	84% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+		top: 0px;
+	}
+
+	90% {
+		opacity: 0.8;
+		// top: -#{$moveTraitAmountPixels * 0.0}px;
+	}
+
+	100% {
+		opacity: 0;
+		top: -#{$moveTraitAmountPixels}px;
+	}
+}
+
+body {
+	padding-top: 2.5rem !important;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	.traitName {
+		font-weight: normal !important;
+		font-family: inherit;
+		font-size: inherit;
+	}
+
+	#statsView {
+		.statsHeader {
+			min-height: $navHeight;
+			max-height: $navHeight;
+		}
+		.title {
+			display: inline-flex;
+			align-items: center;
+		}
+		.quickview-footer {
+			min-height: 3rem;
+		}
+
+		#upgradesBought {
+			ul {
+				min-height: 3.75rem;
+				line-height: 1.3 !important;
+				max-height: 3.75rem;
+				text-align: left;
+				overflow-y: scroll;
+				overflow-x: visible;
+				z-index: 9999999;
+				li {
+					margin-left: 1rem;
+				}
+			}
+		}
+	}
+
+	#complexNav {
+		min-height: $navHeight;
+		max-height: $navHeight;
+
+		.helpText {
+			&.favours {
+				position: relative;
+				left: -1rem;
+			}
+		}
+
+		.autoStats {
+			font-size: 75%;
+			color: $info;
+			font-weight: bold;
+			text-align: right;
+		}
+
+		.traitStats {
+			color: $info;
+			text-align: right;
+			.tile.is-vertical > .tile.is-child:not(:last-child) {
+				margin-bottom: 0 !important;
+			}
+		}
+
+		.navbar-brand {
+			min-height: $navHeight;
+			max-height: $navHeight !important;
+		}
+
+		.navbar-item {
+			flex-shrink: 1;
+			h1 {
+				position: relative;
+				top: -5px;
+			}
+			max-height: $navHeight;
+			&.massDeliveryItem {
+				min-width: 7.5rem;
+				color: $success;
+			}
+
+			.sdText {
+				display: flex;
+			}
+
+			&.favours {
+				background: $dark;
+				.favourText {
+					color: $warning;
+				}
+			}
+		}
+	}
+
+	#complexGame {
+		margin-top: 2.5rem !important;
+
+		.tabs {
+			margin-bottom: 1.4rem;
+		}
+
+		.cardList {
+			.card {
+				margin-bottom: 0.75rem;
+
+				&.justFailed {
+					background: $dangerVeryFaded !important;
+					//box-shadow: 0 1px 2px $danger, 0 0 0 1px $danger;
+				}
+
+				.card-header-title {
+					padding: 0 0.25rem;
+				}
+
+				.card-content {
+					padding: 0;
+					display: flex;
+					align-items: stretch;
+					justify-content: space-between;
+					.description {
+						display: inline-flex;
+						align-items: center;
+						padding: 0.3rem 2rem;
+						width: 100%;
+						text-align: left;
+					}
+
+					.buttonContainer {
+						display: flex;
+						button {
+							height: auto;
+							padding-left: 2.3rem;
+							padding-right: 2.3rem;
+						}
+
+						.mainButton {
+							min-width: 9.5rem;
+						}
+					}
+				}
+
+				.card-footer {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					padding: 0.2rem 1rem;
+
+					.pauseIcon {
+						margin-left: 1.5rem;
+					}
+				}
+
+				.cost {
+					display: inline-grid;
+					align-items: center;
+					padding: 0 1rem;
+					min-width: 9.5rem;
+					text-align: center !important;
+					&.available {
+						background: $successFaded;
+					}
+					background: $dangerFaded;
+				}
+
+				.power {
+					padding: 0 1rem !important;
+					font-weight: bold;
+					font-size: 100%;
+					display: inline-flex;
+					align-items: center;
+					justify-content: space-evenly;
+					min-width: 8.5rem;
+					i {
+						margin-left: 0.3rem;
+					}
+				}
+
+				&.upgrade {
+					.card-header {
+						background: $infoFaded;
+					} // lightcyan;}
+				}
+
+				&.employee {
+					.card-header {
+						background: $warningVeryFaded;
+					}
+				}
+
+				&.machine {
+					.card-header {
+						background: $infoFaded;
+					}
+				}
+			}
+		}
+
+		.homeBox {
+			padding-top: 0;
+			padding-bottom: 0.5rem;
+
+			&.full {
+				.helpText {
+					color: $danger;
+				}
+			}
+
+			&.production {
+				.progressContainer {
+					height: 100%;
+					display: flex;
+					width: 100%;
+					align-items: start;
+					flex-direction: column;
+					flex-grow: 1;
+					flex-shrink: 1;
+				}
+			}
+
+			&.justFailed {
+				background: $dangerVeryFaded !important;
+				box-shadow: 0 1px 2px $danger, 0 0 0 1px $danger;
+			}
+
+			&.employees {
+			}
+
+			.subtitle {
+				color: black;
+				position: relative;
+				top: -16px;
+				text-transform: uppercase;
+				font-variant: small-caps;
+				font-variant-caps: all-petite-caps;
+				background: white !important;
+				padding: 0 10px;
+				text-align: left;
+			}
+
+			.message {
+				text-align: center;
+			}
+			.helpText {
+				position: relative;
+				top: -13px;
+				float: right;
+				z-index: 30;
+
+				&.machines {
+					padding-right: 1.25rem;
+				}
+			}
+		}
+
+		#factoryTab {
+			.buildProgress {
+				line-height: 1.2;
+				min-height: 4.5rem;
+				max-height: 4.5rem;
+			}
+
+			.homeBox.status {
+				.notification {
+					margin-bottom: 0;
+					padding: 1rem 0.5rem 0.7rem;
+				}
+
+				progress {
+					margin-top: 0.5rem;
+				}
+			}
+		}
+
+		.traitBox {
+			padding-top: 0;
+			// max-height: 85vh;
+
+			&.full {
+				// background: lightcoral;
+				//font-size: 90%;
+				box-shadow: 0 1px 2px $danger, 0 0 0 1px $danger;
+			}
+
+			button.massDelivery {
+				float: right;
+				top: -14px;
+				margin-right: 0.1rem;
+			}
+
+			.subtitle {
+				// &.storageAmount{
+				// 	font-size: 80%;
+				// 	vertical-align: bottom;
+				// }
+
+				&.full {
+					color: $danger;
+					//	background: lightcoral !important;
+				}
+			}
+
+			.traitBoxEntry {
+				&.delivered {
+					-webkit-animation: spaceOutUp #{$showTraitDuration}s
+						forwards;
+					animation: spaceOutUp #{$showTraitDuration}s forwards;
+					//-webkit-animation: swashOut #{$showTraitDuration}s forwards;
+					//animation: swashOut  #{$showTraitDuration}s forwards;
+				}
+				display: flex;
+				height: 40px;
+				align-items: center;
+				justify-content: space-between;
+
+				.imgContainer {
+					min-width: 50px;
+					text-align: center;
+				}
+
+				img {
+					position: relative;
+					top: 2px;
+					margin-right: 10px;
+					max-height: 32px;
+				}
+
+				.traitName {
+					text-transform: uppercase;
+					font-variant: small-caps;
+					font-variant-caps: all-petite-caps;
+					overflow-wrap: break-word;
+				}
+			}
+		}
+
+		#factoryStatus {
+			.statusEntry {
+				display: flex;
+				align-items: center;
+				justify-content: space-evenly;
+				padding: 0.4rem 0.5rem !important;
+				border: 2px solid white;
+				border-radius: 10px;
+				.helpText {
+					top: 0px !important;
+				}
+			}
+
+			.workerAllocation {
+				display: flex;
+				align-items: center;
+				justify-content: space-evenly;
+				padding-top: 0 !important;
+
+				h3 {
+					display: flex;
+					align-items: center;
+					justify-content: space-evenly;
+					flex-direction: column;
+				}
+
+				.allocationEntry {
+					button {
+						margin-left: 1rem;
+					}
+				}
+			}
+		}
+	}
+
+	.footerContents {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		height: 100%;
+	}
+
+	.footer {
+		height: 5vh !important;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
+}
+
+#complexFirstLoad {
+	.modal-background {
+		h1.title {
+			font-family: 'Jost*', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			color: white;
+			margin-top: 0.1rem;
+			font-weight: bold;
+			font-size: 300%;
+			text-shadow: 1px 1px black, -1px 1px black, 1px -1px black,
+				-1px -1px black;
+		}
+		p {
+			font-family: 'Jost*', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+			color: white;
+			text-shadow: 1px 1px black, -1px 1px black, 1px -1px black,
+				-1px -1px black;
+			a {
+				color: #fdeed9;
+
+				&:hover {
+					color: #ac5a71;
+				}
+			}
+		}
+	}
+
+	.modal-content {
+		font-family: 'Jost*', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-weight: bold;
+		#firstLoadModal {
+			text-shadow: 1px 1px black, 1px -1px black, -1px 1px black,
+				-1px -1px black;
+			font-size: 120%;
+			border: 2px solid black;
+
+			p {
+				//	background: rgba(0,0,0,.12);
+				//backdrop-filter: blur(10px);
+			}
+
+			color: white;
+			strong {
+				color: #fdeed9;
+			}
+		}
+	}
+}
+
+#winScreenModal {
+	font-family: 'Jost*', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	border: 2px solid black;
+	font-weight: bold;
+	h1 {
+		color: white;
+		font-weight: bold;
+		text-shadow: 1px 1px black, -1px 1px black, 1px -1px black,
+			-1px -1px black;
+	}
+	p {
+		color: white;
+		text-shadow: 1px 1px black, -1px 1px black, 1px -1px black,
+			-1px -1px black;
+		a {
+			color: #fdeed9;
+
+			&:hover {
+				color: #ac5a71;
+			}
+		}
+	}
+}
+
+/// FACTORY VISUALS ///
+
+@keyframes powerUsed {
+	0% {
+		top: 0px;
+	}
+	50% {
+		top: -12px;
+	}
+	100% {
+		top: 0px;
+	}
+}
+
+@keyframes prodWorkingRotate {
+	0% {
+		transform: rotate(-20deg);
+	}
+
+	50% {
+		transform: rotate(20deg);
+	}
+
+	100% {
+		transform: rotate(-20deg);
+	}
+}
+
+@keyframes storageFull {
+	0% {
+		top: 0px;
+		font-size: 110%;
+		transform: rotate(0deg);
+	}
+
+	85% {
+		top: 0px;
+		font-size: 110%;
+		transform: rotate(0deg);
+	}
+
+	90% {
+		top: -5px;
+		font-size: 115%;
+		transform: rotate(20deg);
+	}
+
+	95% {
+		top: -5px;
+		font-size: 115%;
+		transform: rotate(-20deg);
+	}
+
+	100% {
+		transform: rotate(0deg);
+		font-size: 110%;
+		top: 0px;
+	}
+}
+
+@keyframes prodWorkingScale {
+	0% {
+		font-size: 150%;
+	}
+
+	40% {
+		font-size: 155%;
+	}
+
+	50% {
+		font-size: 170%;
+	}
+
+	60% {
+		font-size: 155%;
+	}
+
+	100% {
+		font-size: 150%;
+	}
+}
+
+@keyframes delivering {
+	0% {
+		top: -1rem;
+	}
+
+	10% {
+		top: -1rem;
+	}
+
+	40% {
+		top: 4.5rem;
+	}
+
+	60% {
+		top: 4.5rem;
+	}
+
+	90% {
+		top: -1rem;
+	}
+
+	100% {
+		top: -1rem;
+	}
+}
+
+#factoryVisual {
+	.outputIndicator {
+		margin-top: 1rem !important;
+		margin-bottom: 1rem !important;
+		width: 100%;
+		text-align: center;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#currentJarOutput {
+		font-variant-caps: all-small-caps;
+		width: 100%;
+		margin-top: 0 !important;
+		margin-bottom: 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 2rem;
+		background: #fafafa;
+		.appearingJar {
+			-webkit-animation: swashIn forwards;
+			animation: swashIn forwards;
+		}
+		img {
+			height: 25px;
+		}
+	}
+
+	#allBuildings {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		#prodBuildings {
+			margin-top: 0;
+			margin-bottom: 0;
+
+			.manualWorker {
+				&.working {
+					color: $success;
+				}
+				&.notWorking {
+					color: $light;
+				}
+			}
+
+			.prodBuilding {
+				font-size: 150%;
+				margin: 0 0.2rem;
+				min-height: 2rem;
+				max-height: 2rem;
+				min-width: 1rem;
+				max-width: 1rem;
+			}
+			.buildingAllocated {
+				color: $success;
+				-webkit-animation: prodWorkingScale 1s ease-in-out infinite;
+				animation: prodWorkingScale 1s ease-in-out infinite;
+			}
+			.buildingUnallocated {
+				color: $danger;
+			}
+		}
+
+		.visualBuildings {
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+			flex-wrap: wrap;
+
+			.building {
+				text-shadow: 1px 0px #333;
+			}
+		}
+
+		#deliveryPeople {
+			min-height: 10rem;
+
+			.delivery {
+				-webkit-animation: delivering 10s ease-in-out infinite;
+				animation: delivering 10s ease-in-out infinite;
+
+				&.is-delivery-success {
+					color: $success;
+				}
+				&.is-delivery-warning {
+					color: $warning;
+				}
+				&.is-delivery-danger {
+					color: $danger;
+				}
+			}
+		}
+
+		#powerBuildings {
+			.powerBuilding {
+				font-size: 150%;
+				margin: 0 0.3rem;
+				color: $dangerFaded;
+				position: relative;
+
+				&.isUsed {
+					color: $warning;
+					-webkit-animation: powerUsed 2s ease-in-out infinite;
+					animation: powerUsed 2s ease-in-out infinite;
+				}
+			}
+		}
+
+		#storageBuildings {
+			.storageBuilding {
+				position: relative;
+				font-size: 110%;
+				margin: 0 0.3rem;
+				color: $successFaded;
+				min-height: 1.5rem;
+				max-height: 1.5rem;
+				min-width: 1.1rem;
+				&.isFull {
+					color: $warningFaded;
+					-webkit-animation: storageFull 2s ease-in-out infinite;
+					animation: storageFull 2s ease-in-out infinite;
+				}
+			}
+		}
+	}
+}
+
+/* FIREWORKS */
+
+$particles: 100;
+$width: 500;
+$height: 500;
+
+// Create the explosion...
+$box-shadow: ();
+$box-shadow2: ();
+@for $i from 0 through $particles {
+	$box-shadow: $box-shadow,
+		random($width)-$width /
+			2 +
+			px
+			random($height)-$height /
+			1.2 +
+			px
+			hsl(random(360), 100, 50);
+	$box-shadow2: $box-shadow2, 0 0 #fff;
+}
+@mixin keyframes($animationName) {
+	@-webkit-keyframes #{$animationName} {
+		@content;
+	}
+
+	@-moz-keyframes #{$animationName} {
+		@content;
+	}
+
+	@-o-keyframes #{$animationName} {
+		@content;
+	}
+
+	@-ms-keyframes #{$animationName} {
+		@content;
+	}
+
+	@keyframes #{$animationName} {
+		@content;
+	}
+}
+
+@mixin animation-delay($settings) {
+	-moz-animation-delay: $settings;
+	-webkit-animation-delay: $settings;
+	-o-animation-delay: $settings;
+	-ms-animation-delay: $settings;
+	animation-delay: $settings;
+}
+
+@mixin animation-duration($settings) {
+	-moz-animation-duration: $settings;
+	-webkit-animation-duration: $settings;
+	-o-animation-duration: $settings;
+	-ms-animation-duration: $settings;
+	animation-duration: $settings;
+}
+
+@mixin animation($settings) {
+	-moz-animation: $settings;
+	-webkit-animation: $settings;
+	-o-animation: $settings;
+	-ms-animation: $settings;
+	animation: $settings;
+}
+
+@mixin transform($settings) {
+	transform: $settings;
+	-moz-transform: $settings;
+	-webkit-transform: $settings;
+	-o-transform: $settings;
+	-ms-transform: $settings;
+}
+
+.pyro > .before,
+.pyro > .after {
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	box-shadow: $box-shadow2;
+	@include animation(
+		(
+			1s bang ease-out infinite backwards,
+			1s gravity ease-in infinite backwards,
+			5s position linear infinite backwards
+		)
+	);
+}
+
+.pyro > .after {
+	@include animation-delay((1.25s, 1.25s, 1.25s));
+	@include animation-duration((1.25s, 1.25s, 6.25s));
+}
+
+@include keyframes(bang) {
+	to {
+		box-shadow: $box-shadow;
+	}
+}
+
+@include keyframes(gravity) {
+	to {
+		@include transform(translateY(200px));
+		opacity: 0;
+	}
+}
+
+@include keyframes(position) {
+	0%,
+	19.9% {
+		margin-top: 10%;
+		margin-left: 40%;
+	}
+	20%,
+	39.9% {
+		margin-top: 40%;
+		margin-left: 30%;
+	}
+	40%,
+	59.9% {
+		margin-top: 20%;
+		margin-left: 70%;
+	}
+	60%,
+	79.9% {
+		margin-top: 30%;
+		margin-left: 20%;
+	}
+	80%,
+	99.9% {
+		margin-top: 30%;
+		margin-left: 80%;
+	}
+}
+
+/* END FIREWORKS */
+
+.patchNotes {
+	text-align: center;
+	.subtitle {
+		margin-top: 0.5rem;
+		color: black;
+		font-weight: bold;
+		font-size: 1rem;
+	}
+
+	ul {
+		margin-top: 0.5rem;
+		li {
+			list-style: inside;
+			text-align: justify;
+			font-size: 0.8rem;
+			padding: 0.1rem 0.8rem;
+			line-height: 1.2;
+		}
+	}
+}
+
+.has-spacing-top {
+	margin-top: 0.5rem !important;
+}
+
+.has-spacing-top-2 {
+	margin-top: 1.5rem !important;
+}
+
+.has-spacing-top-3 {
+	margin-top: 2.5rem !important;
+}
+
+.smallPrint {
+	font-size: 80%;
+	font-style: italic;
+}
+
+.is-small-caps {
+	font-variant: small-caps;
+}

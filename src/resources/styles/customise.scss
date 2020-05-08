@@ -1,0 +1,330 @@
+// customise Bulma variables
+$family-sans-serif: 'Fira Code', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$family-secondary: 'Fira Code', Georgia, 'Palatino Linotype', 'Book Antiqua',
+	serif;
+
+// TODO: 'books' and 'games' unstyled flash
+// $title-family, $subtitle-family and $button-family
+// $custom-colors: (
+// 	'lime': (
+// 		lime
+// 	),
+// 	'tomato': (
+// 		tomato,
+// 		white
+// 	),
+// 	'orange': (
+// 		$orange,
+// 		$orange-invert,
+// 		$orange-light
+// 	),
+// 	'lavender': (
+// 		$lavender,
+// 		$lavender-invert,
+// 		$lavender-light,
+// 		$lavender-dark
+// 	)
+// );
+
+// primary
+$turquoise: #118ab2;
+// info
+$cyan: #073b4c;
+//success
+$green: #06d6a0;
+//warning:
+$yellow: #ffd166;
+//danger
+$red: #ef476f;
+
+// $danger: #EF476F;
+// $dangerFaded: rgba(239,71,111,0.5); // #EF476F;
+// $dangerVeryFaded: rgba(239,71,111,0.2); // #EF476F;
+// $success: #06D6A0;
+// $successFaded: rgba(6,214,160,0.4); // #06D6A0;
+// $warning: #FFD166;
+// $warningFaded: rgba(255,209,102,.9); // #FFD166;;
+// $warningVeryFaded: rgba(255,209,102,.3); // #FFD166;;
+// $info: #118aB2;
+// $infoFaded: rgba(17,138,178,.2);
+// $dark: #363636;
+// $light: #073B4C;
+// $primary: #118aB2;
+// $primaryFaded: rgba(17,138,178,.7);
+// $primaryVeryFaded: rgba(17,138,178,.2);
+
+//link
+$blue: #073b4c;
+
+$title-color: $blue;
+$subtitle-color: $turquoise;
+
+$body-size: 18px;
+
+$section-padding: 2rem 1.4rem;
+$notification-padding: 1rem 2.5rem 1rem 1.5rem;
+
+$column-gap: 0.8rem;
+
+$navbar-padding-vertical: 2.5rem;
+$navbar-height: 5rem;
+$footer-height: 2rem;
+$footer-vertical-padding: 2rem;
+$footer-padding: #{$footer-vertical-padding} 1.5rem 6rem;
+// $wrapper-height: calc(100vh - #{$navbar-height} - #{$footer-height} - #{$footer-vertical-padding} - #{$footer-vertical-padding});
+// arrived at experimentally:
+$wrapper-height: calc(100vh - 13rem);
+
+$blockquote-background: rgba(17, 138, 178, 0.13); // #e6ebed;
+$blockquote-text: #073b4c; // hsl(0, 0%, 21%);
+$blockquote-cite: #275b6c;
+
+// dark mode
+// $scheme-main: #000000;
+// $scheme-invert: $ffffff;
+
+nav {
+	.active {
+		background-color: #017aa2;
+	}
+	.active-drop {
+		background-color: #ddd;
+	}
+}
+
+body {
+	&.default {
+		display: flex;
+		// use this if navbar is NOT fixed (default)
+		min-height: 100vh;
+		flex-direction: column;
+	}
+	&.fixed {
+		display: flex;
+		// use this if navbar is fixed
+		min-height: $wrapper-height;
+		flex-direction: column;
+	}
+}
+
+.content {
+	p {
+		margin: 0.5rem 0;
+	}
+
+	ul {
+		// list-style: none !important;
+	}
+}
+
+#wrapper {
+	display: flex;
+	flex: 1 0 auto;
+	min-height: $wrapper-height;
+	padding: 0 2rem;
+}
+
+.footer {
+	height: $footer-height !important;
+}
+
+.content blockquote {
+	border-left: 3px solid $turquoise !important;
+}
+
+blockquote {
+	position: relative;
+	//display: inline-block;
+	background: #{$blockquote-background} !important;
+	padding: 1rem 2.2rem !important;
+	border-radius: 10px;
+	font-family: 'Jost*', 'Bodoni 11', serif;
+	text-align: start;
+	margin-top: 0.5rem !important;
+
+	min-width: 100%;
+	box-shadow: 1px 1px 1px #{$blockquote-background},
+		2px 2px 1px #{$blockquote-background},
+		3px 3px 1px #{$blockquote-background};
+	transition-duration: 0.3s;
+
+	font-size: 90%;
+	font-weight: 500;
+	color: #{$blockquote-text}; // hsl(0, 0%, 21%);
+	// text-shadow: 1px 1px white, -1px 1px white, 1px -1px white, -1px -1px white;
+
+	strong {
+		color: #{$blockquote-text};
+		font-weight: 700;
+	}
+
+	cite {
+		position: relative;
+		display: block;
+		text-align: right;
+		margin-top: 5px;
+
+		color: $blockquote-cite;
+		text-shadow: none;
+		font-size: 80%;
+		a {
+			color: $blockquote-cite;
+			text-shadow: none;
+			text-decoration: none;
+		}
+		// color:#{$blockquote-text}; // hsl(0, 0%, 21%);
+		// text-shadow: 1px 1px white, -1px 1px white, 1px -1px white, -1px -1px white;
+
+		i {
+			position: relative;
+			// background: #eee;
+			padding-left: 5px;
+			font-style: italic;
+			z-index: 5;
+		}
+
+		// &::before {
+		//   display: block;
+		//   content: "";
+		//   position: absolute;
+		//   top: 50%;
+		//   left: 0;
+		//   background: $cyan;
+		//   z-index: 1;
+		// }
+	}
+
+	&:hover {
+		box-shadow: 1px 1px 5px $turquoise, 2px 2px 6px $turquoise,
+			3px 3px 7px $turquoise;
+	}
+
+	&::before {
+		display: block;
+		position: absolute;
+		top: 20px;
+		left: 6px;
+		content: open-quote;
+		font-family: 'Bodoni 11', serif;
+		color: $cyan;
+		font-size: 3rem;
+		line-height: 0.1rem;
+		margin-right: 0.25rem;
+	}
+
+	&::after {
+		content: close-quote;
+		font-family: 'Bodoni 11', serif;
+		font-size: 3rem;
+		color: $cyan;
+		position: absolute;
+		right: 0;
+		bottom: -59px;
+	}
+}
+
+a.blockquoteToggle {
+	position: relative;
+	top: 50px;
+	z-index: 100;
+	left: 56px;
+	opacity: 0.8;
+	max-width: 66px;
+	text-align: center;
+	font-weight: bold;
+	color: #073b4c;
+	text-shadow: 1px 1px white;
+}
+
+a.blockquoteToggle:hover {
+	color: $turquoise;
+	text-shadow: 1px 1px white;
+}
+
+p.has-drop-cap::first-letter {
+	font-size: 60px;
+	padding-right: 1px;
+}
+
+p.has-drop-cap::first-line {
+	font-variant: small-caps;
+	font-variant-caps: all-small-caps;
+	line-height: 1;
+	font-size: 133%;
+}
+
+#mc_embed_signup .button {
+	background-color: #{$green} !important;
+	height: auto;
+	font-size: 2rem;
+	font-weight: bold;
+	line-height: 3rem;
+}
+
+#mc_embed_signup .button:hover {
+	background-color: #{$cyan} !important;
+}
+
+#mc_embed_signup .button:disabled {
+	background-color: #{$red} !important;
+}
+
+.subtitle {
+	margin-bottom: 0 !important;
+
+	hr {
+		margin: 0.5rem 0 0.5rem;
+	}
+
+	.subtitleIcon {
+		color: $turquoise;
+	}
+
+	.subtitleIcon:hover {
+		color: $green;
+	}
+}
+
+.quoteGallery {
+	.galleryButtons {
+		.galleryButton {
+			cursor: pointer;
+			color: $cyan;
+
+			&.left {
+				float: left;
+			}
+			&.right {
+				float: right;
+			}
+		}
+
+		.galleryButton:hover {
+			color: red;
+		}
+	}
+
+	.quoteText {
+		clear: both;
+		margin-top: 6px;
+		border-top: solid 1px #ccc;
+		display: inline-block;
+		padding-top: 6px;
+	}
+}
+
+.carousel {
+	.button {
+		border: none;
+		margin: 0 0.3rem;
+	}
+
+	.carousel__dot--selected {
+		background: $blue;
+	}
+}
+
+@import 'node_modules/bulma/bulma';
+@import 'node_modules/bulma-extensions/bulma-tooltip/dist/css/bulma-tooltip.sass';
+@import 'node_modules/bulma-extensions/bulma-quickview/dist/css/bulma-quickview.sass';
+@import 'node_modules/bulma-extensions/bulma-divider/dist/css/bulma-divider.sass';
