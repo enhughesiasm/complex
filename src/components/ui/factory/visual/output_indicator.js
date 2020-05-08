@@ -20,7 +20,7 @@ const OutputIndicator = (props) => (
 		{!props.amountText && <FriendlyNumber amount={props.amount} />}
 		&nbsp;
 		{props.icon && <FontAwesome icon={props.icon} />}
-		{!props.icon && <img src={jar1t} width='20' />}
+		{!props.icon && <img alt='' src={jar1t} width='20' />}
 		&nbsp;{props.suffixText}
 	</div>
 );

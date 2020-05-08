@@ -2,7 +2,6 @@ import upgradesKeys from '../upgrades/upgrades_keys';
 import moment from 'moment';
 
 const debugValues = {
-
 	debug: true,
 	overallWorkMultiplier: 1.2,
 	totalTimePlayed: moment.duration(0),
@@ -42,56 +41,64 @@ const debugValues = {
 	flexibleMachineryAbsMax: 3,
 	flexibleMachineFactor: 0.15,
 
-	employees:{
-		production:{
+	employees: {
+		production: {
 			hiredAmount: 31,
 			outputMultiplier: 1,
 			costMultiplier: 1,
 			workPerSecondMultiplier: 1,
 			workRequiredMultiplier: 1,
 		},
-		delivery:{
+		delivery: {
 			hiredAmount: 31,
 			outputMultiplier: 1,
 			costMultiplier: 1,
 			workPerSecondMultiplier: 1,
 			workRequiredMultiplier: 1,
 		},
-		builder:{
-			hiredAmount: 500,
+		builder: {
+			hiredAmount: 3,
 			outputMultiplier: 1,
 			costMultiplier: 1,
 			workPerSecondMultiplier: 1,
 			workRequiredMultiplier: 1,
-		}
+		},
 	},
-	upgradesPurchased: [ upgradesKeys.BOX_1, upgradesKeys.WORKBENCH, upgradesKeys.TOOLS, upgradesKeys.GLASSBLOWING, upgradesKeys.BOX_2, upgradesKeys.INVENT_MACHINERY, upgradesKeys.BETTER_MACHINERY, upgradesKeys.FLEXIBLE_MACHINERY ],
+	upgradesPurchased: [
+		upgradesKeys.BOX_1,
+		upgradesKeys.WORKBENCH,
+		upgradesKeys.TOOLS,
+		upgradesKeys.GLASSBLOWING,
+		upgradesKeys.BOX_2,
+		upgradesKeys.INVENT_MACHINERY,
+		upgradesKeys.BETTER_MACHINERY,
+		upgradesKeys.FLEXIBLE_MACHINERY,
+	],
 
-	machinesBuilt:{
+	machinesBuilt: {
 		// yes this is a hacky paste of an enum, I'm sorry
-		'lemonpower': 0,
-		'machiningtable': 0,
-		'loader': 0,
-		'smallwarehouse': 0,
+		lemonpower: 0,
+		machiningtable: 0,
+		loader: 0,
+		smallwarehouse: 0,
 
-		'assembler': 0,
-		'waterpower': 0,
+		assembler: 0,
+		waterpower: 0,
 
-		'conveyorbelt': 0,
-		'steampower': 0,
-		'mediumwarehouse': 0,
+		conveyorbelt: 0,
+		steampower: 0,
+		mediumwarehouse: 0,
 
-		'turbinepower': 0,
-		'traitpump': 0,
-		'industrialwarehouse': 0,
+		turbinepower: 0,
+		traitpump: 0,
+		industrialwarehouse: 0,
 
-		'assemblyline': 0,
-		'coalpower': 0,
+		assemblyline: 0,
+		coalpower: 0,
 
-		'traitcompressor': 0,
-		'massivewheel': 0
-	}
-
+		traitcompressor: 0,
+		massivewheel: 0,
+	},
 };
 
 export default debugValues;

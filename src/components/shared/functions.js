@@ -61,22 +61,23 @@ export function orderByMultipleProperties(prop) {
 }
 
 export function JSON_to_URLEncoded(element, key, list) {
-	var list = list || [];
+	let l = list || [];
 	if (typeof element == 'object') {
-		for (var idx in element)
+		for (let idx in element)
 			JSON_to_URLEncoded(
 				element[idx],
 				key ? key + '[' + idx + ']' : idx,
-				list
+				l
 			);
 	} else {
-		list.push(key + '=' + encodeURIComponent(element));
+		l.push(key + '=' + encodeURIComponent(element));
 	}
-	return list.join('&');
+	return l.join('&');
 }
 
 export function groupBy(array, fnSelectKey) {
 	return array.reduce(
+		// eslint-disable-next-line
 		(r, v, i, a, k = fnSelectKey(v)) => ((r[k] || (r[k] = [])).push(v), r),
 		{}
 	);

@@ -26,7 +26,7 @@ const FriendlyNumber = (props) => {
 				suffix = ' million';
 				afterDp = amount.toString().substring(1, 1 + dp);
 
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 1) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 1);
@@ -36,7 +36,7 @@ const FriendlyNumber = (props) => {
 			case 7:
 				suffix = ' million';
 				afterDp = amount.toString().substring(2, 2 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 2) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 2);
@@ -45,7 +45,7 @@ const FriendlyNumber = (props) => {
 			case 8:
 				suffix = ' million';
 				afterDp = amount.toString().substring(3, 3 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 3) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 3);
@@ -55,7 +55,7 @@ const FriendlyNumber = (props) => {
 			case 9:
 				suffix = ' billion';
 				afterDp = amount.toString().substring(1, 1 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 1) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 1);
@@ -65,7 +65,7 @@ const FriendlyNumber = (props) => {
 			case 10:
 				suffix = ' billion';
 				afterDp = amount.toString().substring(2, 2 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 2) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 2);
@@ -75,7 +75,7 @@ const FriendlyNumber = (props) => {
 			case 11:
 				suffix = ' billion';
 				afterDp = amount.toString().substring(3, 3 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 3) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 3);
@@ -85,7 +85,7 @@ const FriendlyNumber = (props) => {
 			case 12:
 				suffix = ' trillion';
 				afterDp = amount.toString().substring(1, 1 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 1) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 1);
@@ -95,7 +95,7 @@ const FriendlyNumber = (props) => {
 			case 13:
 				suffix = ' trillion';
 				afterDp = amount.toString().substring(2, 2 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 2) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 2);
@@ -105,7 +105,7 @@ const FriendlyNumber = (props) => {
 			case 14:
 				suffix = ' trillion';
 				afterDp = amount.toString().substring(3, 3 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 3) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 3);
@@ -115,7 +115,7 @@ const FriendlyNumber = (props) => {
 			case 15:
 				suffix = ' quadrillion';
 				afterDp = amount.toString().substring(1, 1 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 1) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 1);
@@ -125,7 +125,7 @@ const FriendlyNumber = (props) => {
 			case 16:
 				suffix = ' quadrillion';
 				afterDp = amount.toString().substring(2, 2 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 2) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 2);
@@ -135,7 +135,7 @@ const FriendlyNumber = (props) => {
 			case 17:
 				suffix = ' quadrillion';
 				afterDp = amount.toString().substring(3, 3 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 3) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 3);
@@ -145,7 +145,7 @@ const FriendlyNumber = (props) => {
 			case 18:
 				suffix = ' quintillion';
 				afterDp = amount.toString().substring(1, 1 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 1) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 1);
@@ -155,7 +155,7 @@ const FriendlyNumber = (props) => {
 			case 19:
 				suffix = ' quintillion';
 				afterDp = amount.toString().substring(2, 2 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 2) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 2);
@@ -165,7 +165,7 @@ const FriendlyNumber = (props) => {
 			case 20:
 				suffix = ' quintillion';
 				afterDp = amount.toString().substring(3, 3 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 3) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 3);
@@ -175,7 +175,7 @@ const FriendlyNumber = (props) => {
 			case 21:
 				suffix = ' sextillion';
 				afterDp = amount.toString().substring(1, 1 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 1) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 1);
@@ -185,7 +185,7 @@ const FriendlyNumber = (props) => {
 			case 22:
 				suffix = ' sextillion';
 				afterDp = amount.toString().substring(2, 2 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 2) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 2);
@@ -195,7 +195,7 @@ const FriendlyNumber = (props) => {
 			case 23:
 				suffix = ' sextillion';
 				afterDp = amount.toString().substring(3, 3 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 3) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 3);
@@ -205,7 +205,7 @@ const FriendlyNumber = (props) => {
 			case 24:
 				suffix = ' septillion';
 				afterDp = amount.toString().substring(1, 1 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 1) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 1);
@@ -215,7 +215,7 @@ const FriendlyNumber = (props) => {
 			case 25:
 				suffix = ' septillion';
 				afterDp = amount.toString().substring(2, 2 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 2) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 2);
@@ -225,7 +225,7 @@ const FriendlyNumber = (props) => {
 			case 26:
 				suffix = ' septillion';
 				afterDp = amount.toString().substring(3, 3 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 3) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 3);
@@ -235,7 +235,7 @@ const FriendlyNumber = (props) => {
 			case 27:
 				suffix = ' octillion';
 				afterDp = amount.toString().substring(1, 1 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 1) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 1);
@@ -245,7 +245,7 @@ const FriendlyNumber = (props) => {
 			case 28:
 				suffix = ' octillion';
 				afterDp = amount.toString().substring(2, 2 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 2) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 2);
@@ -255,7 +255,7 @@ const FriendlyNumber = (props) => {
 			case 29:
 				suffix = ' octillion';
 				afterDp = amount.toString().substring(3, 3 + dp);
-				if (parseInt(afterDp) != 0) {
+				if (parseInt(afterDp) !== 0) {
 					display = amount.toString().substring(0, 3) + '.' + afterDp;
 				} else {
 					display = amount.toString().substring(0, 3);

@@ -4,10 +4,6 @@ import HelpText from '../../shared/help_text';
 import FontAwesome from '../../shared/font_awesome';
 
 export default class StatusEntry extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		return (
 			<div

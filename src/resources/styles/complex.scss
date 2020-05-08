@@ -120,6 +120,10 @@ body {
 			max-height: $navHeight !important;
 		}
 
+		.navbar-start {
+			align-items: center;
+		}
+
 		.navbar-item {
 			flex-shrink: 1;
 			h1 {
@@ -263,7 +267,7 @@ body {
 					height: 100%;
 					display: flex;
 					width: 100%;
-					align-items: start;
+					align-items: flex-start;
 					flex-direction: column;
 					flex-grow: 1;
 					flex-shrink: 1;

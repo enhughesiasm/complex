@@ -47,7 +47,7 @@ export default class StorageEntry extends React.Component {
 						(this.props.delivered ? 'delivered' : '')
 					}>
 					<span className='imgContainer'>
-						<img src={this.state.image} />
+						<img src={this.state.image} alt='a jar' />
 					</span>
 					<span className='traitName'>{this.props.name}</span>
 					{!this.props.delivered && (

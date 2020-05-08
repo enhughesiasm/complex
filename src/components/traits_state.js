@@ -210,12 +210,12 @@ const traitsState = {
 	getOutcomePerSecond(type) {
 		let total = 0;
 		traitsState.allEmployees.forEach((e) => {
-			if (e.type == type) {
+			if (e.type === type) {
 				total += e.outcomePerSecond || 0;
 			}
 		});
 
-		if (type == employeeTypes.PRODUCTION) {
+		if (type === employeeTypes.PRODUCTION) {
 			// also add machine production
 			traitsState.machines
 				.getBuiltByRole(machineRoles.PRODUCTION)
@@ -251,10 +251,10 @@ const traitsState = {
 
 	// upgrade methods
 	getUpgradeById(id) {
-		return traitsState.allUpgrades.filter((u) => u.id == id)[0];
+		return traitsState.allUpgrades.filter((u) => u.id === id)[0];
 	},
 	tryGetUpgradeByName(name) {
-		const u = traitsState.allUpgrades.filter((u) => u.name == name);
+		const u = traitsState.allUpgrades.filter((u) => u.name === name);
 
 		if (u && u.length > 0) {
 			return u[0];
@@ -262,7 +262,7 @@ const traitsState = {
 		return null;
 	},
 	getUpgradeByKey(key) {
-		return traitsState.allUpgrades.filter((u) => u.key == key)[0];
+		return traitsState.allUpgrades.filter((u) => u.key === key)[0];
 	},
 	getUnlockedUpgrades() {
 		return traitsState.allUpgrades.filter(
@@ -273,7 +273,7 @@ const traitsState = {
 		);
 	},
 	canPurchaseUpgrade(id) {
-		const upgrade = traitsState.allUpgrades.filter((u) => u.id == id)[0];
+		const upgrade = traitsState.allUpgrades.filter((u) => u.id === id)[0];
 		if (!upgrade) {
 			console.error('missing upgrade in canPurchaseUpgrade, id: ' + id);
 			return false;
@@ -282,7 +282,7 @@ const traitsState = {
 		return traitsState.favours >= upgrade.cost && !upgrade.purchased;
 	},
 	purchaseUpgrade(id, activatePyro) {
-		const upgrade = traitsState.allUpgrades.filter((u) => u.id == id)[0];
+		const upgrade = traitsState.allUpgrades.filter((u) => u.id === id)[0];
 		if (!upgrade) {
 			console.error('missing upgrade in purchaseUpgrade, id: ' + id);
 			return;
@@ -304,8 +304,8 @@ const traitsState = {
 		upgrade.apply(traitsState, activatePyro);
 
 		if (
-			traitsState.upgradesPurchased.filter((a) => a == upgrade.key)
-				.length == 0
+			traitsState.upgradesPurchased.filter((a) => a === upgrade.key)
+				.length === 0
 		) {
 			traitsState.upgradesPurchased.push(upgrade.key);
 		}
@@ -316,7 +316,7 @@ const traitsState = {
 		return traitsState.allEmployees.filter((e) => e.unlocked(traitsState));
 	},
 	canHireEmployee(id) {
-		const emp = traitsState.allEmployees.filter((u) => u.id == id)[0];
+		const emp = traitsState.allEmployees.filter((u) => u.id === id)[0];
 		if (!emp) {
 			console.error('missing employee in canHireEmployee, id: ' + id);
 			return false;
@@ -325,17 +325,17 @@ const traitsState = {
 		return traitsState.favours >= traitsState.getEmployeeCost(id);
 	},
 	getEmployeeByType(type) {
-		return traitsState.allEmployees.filter((a) => a.type == type)[0];
+		return traitsState.allEmployees.filter((a) => a.type === type)[0];
 	},
 	getEmployeeCost(id) {
-		const emp = traitsState.allEmployees.filter((u) => u.id == id)[0];
+		const emp = traitsState.allEmployees.filter((u) => u.id === id)[0];
 		if (!emp) {
 			console.error('missing employee in getEmployeeCost, id: ' + id);
 			return 9999999999990;
 		}
 
 		let status = traitsState.employees[emp.type];
-		if (status.hiredAmount == 0) return emp.baseCost;
+		if (status.hiredAmount === 0) return emp.baseCost;
 
 		let cost =
 			emp.baseCost *
@@ -348,7 +348,7 @@ const traitsState = {
 			: Math.ceil(cost / 5) * 5; // round to nearest 5, for fun
 	},
 	hireEmployee(id) {
-		const emp = traitsState.allEmployees.filter((u) => u.id == id)[0];
+		const emp = traitsState.allEmployees.filter((u) => u.id === id)[0];
 		if (!emp) {
 			console.error('missing employee in hireEmployee, id: ' + id);
 			return false;
@@ -375,7 +375,7 @@ const traitsState = {
 	getFlexibleMultiplier(employeeType) {
 		if (
 			!traitsState.flexibleMachineryUnlocked ||
-			traitsState.flexibleMachinerySetting == 0
+			traitsState.flexibleMachinerySetting === 0
 		)
 			return 1;
 
@@ -410,7 +410,7 @@ const traitsState = {
 		cancellationRefundFactor: 0.5,
 		getBuiltByRole(role) {
 			return traitsState.machines.all.filter(
-				(a) => a.role == role && a.builtAmount > 0
+				(a) => a.role === role && a.builtAmount > 0
 			);
 		},
 		getCountByRole(role) {
@@ -434,7 +434,7 @@ const traitsState = {
 			if (includeBuildQueue) {
 				traitsState.machines.buildQueue.forEach((buildItem) => {
 					power += traitsState.machines.all.filter(
-						(m) => m.type == buildItem.type
+						(m) => m.type === buildItem.type
 					)[0].power;
 				});
 			}
@@ -468,7 +468,7 @@ const traitsState = {
 			let size = 0;
 			traitsState.machines.all
 				.filter(
-					(a) => a.builtAmount > 0 && a.role == machineRoles.STORAGE
+					(a) => a.builtAmount > 0 && a.role === machineRoles.STORAGE
 				)
 				.forEach((m) => {
 					size +=
@@ -574,9 +574,9 @@ const traitsState = {
 			.map((a) => a.builtAmount)
 			.reduce((a, b) => (a || 0) + (b || 0), 0);
 
-		if (totalBuilt == 0) {
+		if (totalBuilt === 0) {
 			return traitsState.machines.all.filter(
-				(a) => a.unlocked && a.type == machineTypes.LEMON_POWER
+				(a) => a.unlocked && a.type === machineTypes.LEMON_POWER
 			);
 		} else {
 			return traitsState.machines.all.filter((a) => a.unlocked);
@@ -603,12 +603,12 @@ const traitsState = {
 			console.error('missing machine in getMachineCost: (' + type + ' )');
 
 		let amountInBuildQueue = traitsState.machines.buildQueue.filter(
-			(a) => a.type == type
+			(a) => a.type === type
 		).length;
 
 		let totalAmount = machine.builtAmount + amountInBuildQueue;
 
-		if (totalAmount == 0)
+		if (totalAmount === 0)
 			return machine.baseCost * traitsState.machineCostMultiplier;
 
 		let cost =
@@ -638,7 +638,7 @@ const traitsState = {
 	},
 	cancelMachineFromQueue(entry, index) {
 		let queueEntry = traitsState.machines.buildQueue[index];
-		if (queueEntry.type != entry.type) {
+		if (queueEntry.type !== entry.type) {
 			alert('something weird happened with the build queue, sorry.');
 			return;
 		}
@@ -650,7 +650,7 @@ const traitsState = {
 		traitsState.favours += refundAmount;
 		traitsState.favoursSpent -= refundAmount;
 
-		if (index == 0) {
+		if (index === 0) {
 			// reset the machine we're actually building
 			traitsState.getEmployeeByType(employeeTypes.BUILDER).work.building =
 				machineTypes.NONE;
@@ -660,7 +660,7 @@ const traitsState = {
 		}
 	},
 	getMachineByType(type) {
-		return traitsState.machines.all.filter((m) => m.type == type)[0];
+		return traitsState.machines.all.filter((m) => m.type === type)[0];
 	},
 	getCurrentlyBuildingMachine() {
 		let builder = traitsState.getEmployeeByType(employeeTypes.BUILDER);
@@ -689,7 +689,7 @@ const traitsState = {
 			return;
 		}
 
-		if (bqItem.type != machine.type) {
+		if (bqItem.type !== machine.type) {
 			console.error(
 				'incorrect type for buildQueueItem in buildMachine: (' +
 					machine.type +
@@ -791,7 +791,7 @@ const traitsState = {
 	},
 	updateVisualStorage() {
 		if (
-			traitsState.storedTraits.filter((a) => !a.delivered).length ==
+			traitsState.storedTraits.filter((a) => !a.delivered).length ===
 			traitsState.stored
 		)
 			return;
@@ -859,7 +859,7 @@ const traitsState = {
 
 		let amountToDeliver = Math.min(currentStored, amount); // can't deliver more than we have in storage
 
-		if (amountToDeliver == 0) return 0;
+		if (amountToDeliver === 0) return 0;
 
 		//console.log('attempting ' + amount + ' delivery; ' + currentStored + ' in storage; ' + ' will attempt ' + amountToDeliver);
 
@@ -886,8 +886,8 @@ const traitsState = {
 				.slice(0, visualsToAffect); // gets all elements from amount remaining to end
 
 			if (
-				visualsToAffect != affectedVisuals.length ||
-				visualsToAffect == 0
+				visualsToAffect !== affectedVisuals.length ||
+				visualsToAffect === 0
 			) {
 				// debugger;
 			}
@@ -924,7 +924,7 @@ const traitsState = {
 	},
 	removeFromVisualStorage(id) {
 		traitsState.storedTraits = traitsState.storedTraits.filter(
-			(t) => t.id != id
+			(t) => t.id !== id
 		);
 		traitsState.updateVisualStorage();
 	},

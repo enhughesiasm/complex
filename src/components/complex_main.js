@@ -4,95 +4,128 @@ import complexTabs from './complex_tabs';
 import HomeTab from './ui/home/tab_home';
 import FactoryTab from './ui/factory/tab_factory';
 
-const ComplexMain = (props) =>
-	<main id="wrapper" className="columns" style={{minHeight: props.wrapperHeight + 'vh'}}>
-		{ props.showPyro && <div className="pyro is-fixed-top" >
-			<div className="before"></div>
-			<div className="after"></div>
-		</div>}
-		<div id="complexGame" className="column has-spacing-top">
-			{ props.areMachinesUnlocked && props.employees['builder'].hiredAmount > 0 && <span>
-				{/* <HelpText helpKey='tabs' direction='right' additionalClassName="is-pulled-left"/> */}
-				<div className="tabs is-centered is-toggle is-toggle-rounded">
-					<ul>
-						<li className={'is-size-7-mobile ' + (props.activeTab == complexTabs.HOME ? ' is-active' : '')}><a onClick={() => props.onSetActiveTab(complexTabs.HOME)} >Home</a></li>
-						<li className={'is-size-7-mobile ' + (props.activeTab == complexTabs.FACTORY ? ' is-active' : '')}><a onClick={() => props.onSetActiveTab(complexTabs.FACTORY)}>Factory</a></li>
-					</ul>
-				</div>
-
-			</span>
-			}
-			{ props.activeTab == complexTabs.HOME && <HomeTab
-				productionPerClick={props.productionPerClick}
-				productionTimeToMake={props.productionTimeToMake}
-				productionProgressPercent={props.productionProgressPercent}
-
-				canShowEmployees={props.canShowEmployees}
-				employees={props.employees}
-				employeesUnlocked={props.employeesUnlocked}
-				employeesCanHire={props.employeesCanHire}
-				employeesGetCost={props.employeesGetCost}
-				employeesHire={props.employeesHire}
-
-
-				canShowUpgrades={props.canShowUpgrades}
-				upgradesUnlocked={props.upgradesUnlocked}
-				upgradesAll={props.upgradesAll}
-				upgradesCanPurchase={props.upgradesCanPurchase}
-				upgradesPurchase={props.upgradesPurchase}
-
-				deliveryFadeOutTimeMs={props.deliveryFadeOutTimeMs}
-				storageCurrentSize={props.storageCurrentSize}
-				storageIsFull={props.storageIsFull}
-				storageTraits={props.storageTraits}
-				storageAmount={props.storageAmount}
-				storageMax={props.storageMax}
-			/> }
-			{ props.activeTab == complexTabs.FACTORY && <FactoryTab
-
-				employees={props.employees}
-				manualWorkers={props.manualWorkers}
-				deliverers={props.deliverers}
-				builders={props.builders}
-
-				getOutcomePerSecond={props.getOutcomePerSecond}
-
-				powerCommitted={props.powerCommitted}
-				powerTotal={props.powerTotal}
-
-				storageAmount={props.storageAmount}
-				storageIsFull={props.storageIsFull}
-				storageNaturalSize={props.storageNaturalSize}
-				storageMachineSize={props.storageMachineSize}
-				machineStorageMultiplier={props.machineStorageMultiplier}
-
-				buildQueue={props.buildQueue}
-				buildingCurrentMachine={props.buildingCurrentMachine}
-				onCancelMachineFromBuildQueue={props.onCancelMachineFromBuildQueue}
-				buildingGetCancellationRefundAmount={props.buildingGetCancellationRefundAmount}
-
-				builtProdBuildings={props.builtProdBuildings}
-				builtDeliveryBuildings={props.builtDeliveryBuildings}
-				builtPowerBuildings={props.builtPowerBuildings}
-				builtStorageBuildings={props.builtStorageBuildings}
-
-				machinesAll={props.machinesAll}
-				machinesUnlockedList={props.machinesUnlockedList}
-				machinesGetCost={props.machinesGetCost}
-				machinesAddToQueue={props.machinesAddToQueue}
-				machinesSell={props.machinesSell}
-				machinesCanBuild={props.machinesCanBuild}
-
-				flexibleMachinerySetting={props.flexibleMachinerySetting}
-				flexibleMachineryUnlocked={props.flexibleMachineryUnlocked}
-				onFlexibleMachineryUpdate={props.onFlexibleMachineryUpdate}
-				flexibleMachineryAbsMax={props.flexibleMachineryAbsMax}
-
-				onReallocateProdWorker={props.onReallocateProdWorker}
-			/> }
-
+const ComplexMain = (props) => (
+	<main
+		id='wrapper'
+		className='columns'
+		style={{ minHeight: props.wrapperHeight + 'vh' }}>
+		{props.showPyro && (
+			<div className='pyro is-fixed-top'>
+				<div className='before'></div>
+				<div className='after'></div>
+			</div>
+		)}
+		<div id='complexGame' className='column has-spacing-top'>
+			{props.areMachinesUnlocked &&
+				props.employees['builder'].hiredAmount > 0 && (
+					<span>
+						{/* <HelpText helpKey='tabs' direction='right' additionalClassName="is-pulled-left"/> */}
+						<div className='tabs is-centered is-toggle is-toggle-rounded'>
+							<ul>
+								<li
+									className={
+										'is-size-7-mobile ' +
+										(props.activeTab === complexTabs.HOME
+											? ' is-active'
+											: '')
+									}>
+									{/* eslint-disable-next-line*/}
+									<a
+										onClick={() =>
+											props.onSetActiveTab(
+												complexTabs.HOME
+											)
+										}>
+										Home
+									</a>
+								</li>
+								<li
+									className={
+										'is-size-7-mobile ' +
+										(props.activeTab === complexTabs.FACTORY
+											? ' is-active'
+											: '')
+									}>
+									{/* eslint-disable-next-line*/}
+									<a
+										onClick={() =>
+											props.onSetActiveTab(
+												complexTabs.FACTORY
+											)
+										}>
+										Factory
+									</a>
+								</li>
+							</ul>
+						</div>
+					</span>
+				)}
+			{props.activeTab === complexTabs.HOME && (
+				<HomeTab
+					productionPerClick={props.productionPerClick}
+					productionTimeToMake={props.productionTimeToMake}
+					productionProgressPercent={props.productionProgressPercent}
+					canShowEmployees={props.canShowEmployees}
+					employees={props.employees}
+					employeesUnlocked={props.employeesUnlocked}
+					employeesCanHire={props.employeesCanHire}
+					employeesGetCost={props.employeesGetCost}
+					employeesHire={props.employeesHire}
+					canShowUpgrades={props.canShowUpgrades}
+					upgradesUnlocked={props.upgradesUnlocked}
+					upgradesAll={props.upgradesAll}
+					upgradesCanPurchase={props.upgradesCanPurchase}
+					upgradesPurchase={props.upgradesPurchase}
+					deliveryFadeOutTimeMs={props.deliveryFadeOutTimeMs}
+					storageCurrentSize={props.storageCurrentSize}
+					storageIsFull={props.storageIsFull}
+					storageTraits={props.storageTraits}
+					storageAmount={props.storageAmount}
+					storageMax={props.storageMax}
+				/>
+			)}
+			{props.activeTab === complexTabs.FACTORY && (
+				<FactoryTab
+					employees={props.employees}
+					manualWorkers={props.manualWorkers}
+					deliverers={props.deliverers}
+					builders={props.builders}
+					getOutcomePerSecond={props.getOutcomePerSecond}
+					powerCommitted={props.powerCommitted}
+					powerTotal={props.powerTotal}
+					storageAmount={props.storageAmount}
+					storageIsFull={props.storageIsFull}
+					storageNaturalSize={props.storageNaturalSize}
+					storageMachineSize={props.storageMachineSize}
+					machineStorageMultiplier={props.machineStorageMultiplier}
+					buildQueue={props.buildQueue}
+					buildingCurrentMachine={props.buildingCurrentMachine}
+					onCancelMachineFromBuildQueue={
+						props.onCancelMachineFromBuildQueue
+					}
+					buildingGetCancellationRefundAmount={
+						props.buildingGetCancellationRefundAmount
+					}
+					builtProdBuildings={props.builtProdBuildings}
+					builtDeliveryBuildings={props.builtDeliveryBuildings}
+					builtPowerBuildings={props.builtPowerBuildings}
+					builtStorageBuildings={props.builtStorageBuildings}
+					machinesAll={props.machinesAll}
+					machinesUnlockedList={props.machinesUnlockedList}
+					machinesGetCost={props.machinesGetCost}
+					machinesAddToQueue={props.machinesAddToQueue}
+					machinesSell={props.machinesSell}
+					machinesCanBuild={props.machinesCanBuild}
+					flexibleMachinerySetting={props.flexibleMachinerySetting}
+					flexibleMachineryUnlocked={props.flexibleMachineryUnlocked}
+					onFlexibleMachineryUpdate={props.onFlexibleMachineryUpdate}
+					flexibleMachineryAbsMax={props.flexibleMachineryAbsMax}
+					onReallocateProdWorker={props.onReallocateProdWorker}
+				/>
+			)}
 		</div>
-	</main>;
+	</main>
+);
 
 export default ComplexMain;
 
@@ -101,7 +134,7 @@ ComplexMain.propTypes = {
 	showPyro: PropTypes.bool.isRequired,
 	areMachinesUnlocked: PropTypes.bool.isRequired,
 	canShowEmployees: PropTypes.bool.isRequired,
-	canShowUpgrades:PropTypes.bool.isRequired,
+	canShowUpgrades: PropTypes.bool.isRequired,
 	employees: PropTypes.object.isRequired,
 	activeTab: PropTypes.string.isRequired,
 	onSetActiveTab: PropTypes.func.isRequired,
@@ -121,9 +154,9 @@ ComplexMain.propTypes = {
 	storageIsFull: PropTypes.bool.isRequired,
 	storageAmount: PropTypes.number.isRequired,
 	storageTraits: PropTypes.array.isRequired,
-	storageCurrentSize:PropTypes.number.isRequired,
-	storageNaturalSize:PropTypes.number.isRequired,
-	storageMachineSize:PropTypes.number.isRequired,
+	storageCurrentSize: PropTypes.number.isRequired,
+	storageNaturalSize: PropTypes.number.isRequired,
+	storageMachineSize: PropTypes.number.isRequired,
 	storageMax: PropTypes.number.isRequired,
 	machineStorageMultiplier: PropTypes.number.isRequired,
 
@@ -135,7 +168,7 @@ ComplexMain.propTypes = {
 	powerCommitted: PropTypes.number.isRequired,
 	powerTotal: PropTypes.number.isRequired,
 
-	buildQueue:PropTypes.array.isRequired,
+	buildQueue: PropTypes.array.isRequired,
 	buildingCurrentMachine: PropTypes.object,
 	onCancelMachineFromBuildQueue: PropTypes.func.isRequired,
 	buildingGetCancellationRefundAmount: PropTypes.func.isRequired,
@@ -156,5 +189,5 @@ ComplexMain.propTypes = {
 	flexibleMachinerySetting: PropTypes.number.isRequired,
 	flexibleMachineryUnlocked: PropTypes.bool.isRequired,
 	flexibleMachineryAbsMax: PropTypes.number.isRequired,
-	onFlexibleMachineryUpdate: PropTypes.func.isRequired
+	onFlexibleMachineryUpdate: PropTypes.func.isRequired,
 };

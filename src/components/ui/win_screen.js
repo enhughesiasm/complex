@@ -39,7 +39,7 @@ export default class WinScreen extends React.Component {
 		let direction = this.state.YDirection;
 
 		let YChange =
-			direction == 'down'
+			direction === 'down'
 				? this.state.YMoveRate * -1
 				: this.state.YMoveRate;
 		let newY = this.state.backgroundY + YChange; // (this.state.YDirection =='down' ? this.state.YMoveRate : -this.state.YMoveRate);

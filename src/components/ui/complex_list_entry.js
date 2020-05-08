@@ -4,10 +4,6 @@ import FontAwesome from '../shared/font_awesome';
 import FriendlyNumber from '../shared/friendly_number';
 
 export default class ComplexListEntry extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		return (
 			<div
@@ -132,17 +128,18 @@ export default class ComplexListEntry extends React.Component {
 							</progress>
 						)}
 
-						<a
+						<div
 							className={
 								'pauseIcon tooltip is-tooltip-info is-tooltip-left ' +
 								(this.props.paused
 									? 'has-text-danger'
 									: 'has-text-info')
 							}
+							style={{ cursor: 'pointer' }}
 							data-tooltip={this.props.pauseText}
 							onClick={this.props.onPauseClicked}>
 							<FontAwesome icon={this.props.pauseIcon} />
-						</a>
+						</div>
 					</div>
 				)}
 			</div>

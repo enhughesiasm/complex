@@ -6,7 +6,7 @@ import FontAwesome from '../../shared/font_awesome';
 const BuildProgress = (props) => {
 	const { buildingCurrentMachine } = props;
 
-	let actuallyBuilding = buildingCurrentMachine.type != machineTypes.NONE;
+	let actuallyBuilding = buildingCurrentMachine.type !== machineTypes.NONE;
 
 	return (
 		<div className='buildProgress notification is-light'>

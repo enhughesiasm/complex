@@ -8,10 +8,6 @@ import FontAwesome from '../shared/font_awesome';
 import HelpText from '../shared/help_text';
 
 export default class ComplexStats extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-
 	componentDidMount() {
 		this.props.attachQuickviews();
 	}
@@ -116,8 +112,7 @@ export default class ComplexStats extends React.Component {
 							%
 						</p>
 
-						{/* <p><strong>Lost to Storage: </strong> <FriendlyNumber amount={ this.props.totalDelivered }/></p> */}
-						<img src={jarMix} style={{ width: '40px' }} />
+						<img alt='' src={jarMix} style={{ width: '40px' }} />
 						<div
 							className='is-divider'
 							data-content='AUTOMATIC'></div>

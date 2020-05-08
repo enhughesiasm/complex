@@ -22,12 +22,12 @@ const BoxUpgrades = (props) => {
 			<HelpText helpKey={'upgrades'} direction='left' />
 			<span className='subtitle is-size-6-mobile '>UPGRADES</span>
 			<div id='upgradeBox'>
-				{upgradesUnlocked.length == 0 && remainingUpgrades > 0 && (
+				{upgradesUnlocked.length === 0 && remainingUpgrades > 0 && (
 					<div className='message'>
 						There&apos;s {remainingUpgrades} more...
 					</div>
 				)}
-				{upgradesUnlocked.length == 0 && remainingUpgrades == 0 && (
+				{upgradesUnlocked.length === 0 && remainingUpgrades === 0 && (
 					<div className='message'>
 						<FontAwesome icon={'handshake'} /> COMPLETE{' '}
 						<FontAwesome icon={'glass-cheers'} />

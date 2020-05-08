@@ -15,12 +15,12 @@ const DeliveryPeople = (props) => {
 	const { deliverers, getOutcomePerSecond, builtDeliveryBuildings } = props;
 
 	let anyLoaders =
-		builtDeliveryBuildings?.filter((a) => a.type == machineTypes.LOADER)
+		builtDeliveryBuildings?.filter((a) => a.type === machineTypes.LOADER)
 			.length > 0;
 	let loaders = {};
 	if (anyLoaders) {
 		loaders = builtDeliveryBuildings.filter(
-			(a) => a.type == machineTypes.LOADER
+			(a) => a.type === machineTypes.LOADER
 		)[0];
 	}
 
@@ -34,9 +34,9 @@ const DeliveryPeople = (props) => {
 	if (deliveryRatio > ratios.GOOD) ratio = ratios.GOOD;
 
 	let ratioType =
-		ratio == ratios.BAD
+		ratio === ratios.BAD
 			? 'danger'
-			: ratio == ratios.OKAY
+			: ratio === ratios.OKAY
 			? 'warning'
 			: 'success';
 

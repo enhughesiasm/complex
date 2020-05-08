@@ -9,14 +9,21 @@ const ComplexFooter = (props) => {
 		<div className='footer is-paddingless is-size-7-mobile '>
 			<div
 				className='notification footerContents is-dark is-marginless smallPrint content has-text-centered'
-				style={{ padding: '.2rem' }}>
+				style={{ padding: '.2rem', alignItems: 'center' }}>
+				<span>v{props.version}</span>
 				<span>
-					v{props.version}
-					&nbsp;<a onClick={props.togglePatchNotes}>Changelog</a>
+					<button
+						class={
+							'button ' +
+							(props.patchNotesActive ? 'is-danger' : 'is-dark')
+						}
+						onClick={props.togglePatchNotes}>
+						Changelog
+					</button>
 				</span>
 				<span>
 					&copy; Neil Hughes 2019
-					{currentYear != 2019 ? '—' + currentYear : ''}
+					{currentYear !== 2019 ? '—' + currentYear : ''}
 					&nbsp;
 					<HelpText helpKey='about' />
 				</span>
@@ -26,7 +33,7 @@ const ComplexFooter = (props) => {
 						target='_blank'
 						rel='noopener noreferrer'
 						href='https://enhughesiasm.com/sbl'>
-						Click here for the novel, The Shop Before Life
+						Based on The Shop Before Life
 					</a>
 				</span>
 				<span>

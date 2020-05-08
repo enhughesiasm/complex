@@ -40,10 +40,10 @@ const MachinesBox = (props) => {
 					{role.machines.map((m) => {
 						let canBuild = machinesCanBuild(m);
 						let buildTooltip = ''; //'Add to queue!';
-						if (canBuild == machineBuildPermission.NOPOWER) {
+						if (canBuild === machineBuildPermission.NOPOWER) {
 							buildTooltip = 'Not enough power.';
 						} else if (
-							canBuild == machineBuildPermission.NOFAVOURS
+							canBuild === machineBuildPermission.NOFAVOURS
 						) {
 							buildTooltip = 'Not enough favours.';
 						}
@@ -64,10 +64,11 @@ const MachinesBox = (props) => {
 								}
 								description={m.description}
 								favoursAvailable={
-									canBuild != machineBuildPermission.NOFAVOURS
+									canBuild !==
+									machineBuildPermission.NOFAVOURS
 								}
 								canPurchase={
-									canBuild == machineBuildPermission.SUCCESS
+									canBuild === machineBuildPermission.SUCCESS
 								}
 								cost={cost}
 								onPurchaseClicked={() =>

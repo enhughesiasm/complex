@@ -115,20 +115,8 @@ class ComplexNav extends React.Component {
 							'navbar-menu ' +
 							(this.state.burgerActive ? 'is-active' : '')
 						}>
-						<div className='navbar-start'>
-							<a
-								className='navbar-item is-size-7 is-hidden-mobile'
-								activeclassname='active'>
-								<div onClick={this.onLinkClicked}>
-									&nbsp;The Supplier&apos;s Complex
-									<div className='is-pulled-left'>
-										<HelpText
-											helpKey='complex'
-											direction='right'
-										/>
-									</div>
-								</div>
-							</a>
+						<div className='navbar-start' style={{}}>
+							<h2>The Supplier&apos;s Complex</h2>
 							<div className='navbar-item traitStats is-hidden-mobile is-size-7'>
 								{totalDelivered > 10 && (
 									<button
@@ -147,6 +135,7 @@ class ComplexNav extends React.Component {
 									</button>
 								)}
 							</div>
+
 							<div
 								className='navbar-item upgradesAvailable is-hidden-mobile is-size-7'
 								style={{
@@ -192,6 +181,7 @@ class ComplexNav extends React.Component {
 									activeclassname='active'>
 									<span className='is-size-7 sdText has-text-weight-bold'>
 										<img
+											alt='a jar'
 											src={jar1t}
 											style={{
 												width: '25px',

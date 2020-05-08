@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FontAwesome from '../../../shared/font_awesome';
 import OutputIndicator from './output_indicator';
-//import {useTraceUpdate} from '../../shared/functions';
 
 const getStorage = (totalUsed, capacity) => {
 	if (totalUsed < 0) return 0;
@@ -11,8 +10,6 @@ const getStorage = (totalUsed, capacity) => {
 };
 
 const StorageBuildings = (props) => {
-	//	useTraceUpdate(props);
-
 	const {
 		storageNaturalSize,
 		storageMachineSize,
@@ -34,7 +31,7 @@ const StorageBuildings = (props) => {
 		storing: getStorage(currentStored, storageNaturalSize),
 	});
 
-	buildings[0].isFull = buildings[0].size == buildings[0].storing;
+	buildings[0].isFull = buildings[0].size === buildings[0].storing;
 
 	currentStored -= storageNaturalSize;
 
@@ -53,7 +50,7 @@ const StorageBuildings = (props) => {
 				),
 			};
 
-			newB.isFull = newB.size == newB.storing;
+			newB.isFull = newB.size === newB.storing;
 			currentStored -= b.storage();
 
 			buildings.push(newB);

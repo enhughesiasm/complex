@@ -15,7 +15,8 @@ const BuildQueueEntry = (props) => (
 			{props.entry.cost}
 		</div>
 		<div className='tile is-child is-2 is-marginless is-paddingless is-size-7'>
-			<a
+			<div
+				style={{ cursor: 'pointer' }}
 				onClick={() =>
 					props.onCancelMachineFromBuildQueue(
 						props.entry,
@@ -33,7 +34,7 @@ const BuildQueueEntry = (props) => (
 					' Favours'
 				}>
 				<FontAwesome icon='times-circle' />
-			</a>
+			</div>
 		</div>
 	</div>
 );

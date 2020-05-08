@@ -474,6 +474,7 @@ export default class ComplexGame extends React.Component {
 							<ComplexFooter
 								version={this.state.traitsState.version}
 								togglePatchNotes={this.togglePatchNotes}
+								patchNotesActive={this.state.patchNotesActive}
 							/>
 						)}
 					</div>
