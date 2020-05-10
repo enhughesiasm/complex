@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/complex/static/css/main.730ffeb8.chunk.css",
-    "main.js": "/complex/static/js/main.b25cf2ac.chunk.js",
-    "main.js.map": "/complex/static/js/main.b25cf2ac.chunk.js.map",
+    "main.css": "/complex/static/css/main.86ab4be7.chunk.css",
+    "main.js": "/complex/static/js/main.2cb8caa4.chunk.js",
+    "main.js.map": "/complex/static/js/main.2cb8caa4.chunk.js.map",
     "runtime-main.js": "/complex/static/js/runtime-main.fc516b8c.js",
     "runtime-main.js.map": "/complex/static/js/runtime-main.fc516b8c.js.map",
     "static/css/2.0c251c65.chunk.css": "/complex/static/css/2.0c251c65.chunk.css",
-    "static/js/2.b82df50c.chunk.js": "/complex/static/js/2.b82df50c.chunk.js",
-    "static/js/2.b82df50c.chunk.js.map": "/complex/static/js/2.b82df50c.chunk.js.map",
+    "static/js/2.f15b806f.chunk.js": "/complex/static/js/2.f15b806f.chunk.js",
+    "static/js/2.f15b806f.chunk.js.map": "/complex/static/js/2.f15b806f.chunk.js.map",
     "index.html": "/complex/index.html",
-    "precache-manifest.8f12ef3bba5dc7e1ba313634ba80ae17.js": "/complex/precache-manifest.8f12ef3bba5dc7e1ba313634ba80ae17.js",
+    "precache-manifest.c92642b3d3434529e7b1f98f0573e5f5.js": "/complex/precache-manifest.c92642b3d3434529e7b1f98f0573e5f5.js",
     "service-worker.js": "/complex/service-worker.js",
     "static/css/2.0c251c65.chunk.css.map": "/complex/static/css/2.0c251c65.chunk.css.map",
-    "static/css/main.730ffeb8.chunk.css.map": "/complex/static/css/main.730ffeb8.chunk.css.map",
-    "static/js/2.b82df50c.chunk.js.LICENSE.txt": "/complex/static/js/2.b82df50c.chunk.js.LICENSE.txt",
+    "static/css/main.86ab4be7.chunk.css.map": "/complex/static/css/main.86ab4be7.chunk.css.map",
+    "static/js/2.f15b806f.chunk.js.LICENSE.txt": "/complex/static/js/2.f15b806f.chunk.js.LICENSE.txt",
     "static/media/jar1transinverted.png": "/complex/static/media/jar1transinverted.5e65188b.png",
     "static/media/jarmix.jpg": "/complex/static/media/jarmix.3d4ba374.jpg",
     "static/media/shelves_bw.jpg": "/complex/static/media/shelves_bw.6ca742b4.jpg",
@@ -22,8 +22,8 @@
   "entrypoints": [
     "static/js/runtime-main.fc516b8c.js",
     "static/css/2.0c251c65.chunk.css",
-    "static/js/2.b82df50c.chunk.js",
-    "static/css/main.730ffeb8.chunk.css",
-    "static/js/main.b25cf2ac.chunk.js"
+    "static/js/2.f15b806f.chunk.js",
+    "static/css/main.86ab4be7.chunk.css",
+    "static/js/main.2cb8caa4.chunk.js"
   ]
 }
