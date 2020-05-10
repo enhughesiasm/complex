@@ -25,6 +25,13 @@ export default class ComplexPatchNotes extends React.Component {
 				</header>
 				<div className='quickview-body'>
 					<div className='quickview-block'>
+						<p className='subtitle'>v0.9.3 - 10 May 2020</p>
+						<ul>
+							<li>
+								improved mobile CSS - still very messy but now
+								at least playable!
+							</li>
+						</ul>
 						<p className='subtitle'>v0.9.2 - 08 May 2020</p>
 						<ul>
 							<li>moved host</li>

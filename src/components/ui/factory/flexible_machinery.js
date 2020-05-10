@@ -28,7 +28,7 @@ const FlexibleMachinery = (props) => {
 			</h3>
 			<HelpText helpKey='flexibleMachinery' />
 			<div
-				className='level is-flex'
+				className='level is-flex machineryCont'
 				style={{ alignItems: 'center', justifyContent: 'center' }}>
 				<div
 					className='level-item is-flex'

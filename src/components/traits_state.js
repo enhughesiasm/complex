@@ -14,7 +14,7 @@ import bulmaQuickview from 'bulma-extensions/bulma-quickview/dist/js/bulma-quick
 import initialValues from './save_data/initial_values';
 import debugValues from './save_data/debug_values';
 
-const version = '0.9.2';
+const version = '0.9.3';
 const tickLengthMs = 20;
 const debug = true && process.env.NODE_ENV === 'development';
 

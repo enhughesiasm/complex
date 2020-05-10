@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import HelpText from './shared/help_text';
+import useViewport from '../shared/use_viewport';
+import breakpoints from '../shared/viewport_breakpoints';
 
 const ComplexFooter = (props) => {
 	var currentYear = new Date().getFullYear();
+
+	const { width } = useViewport();
 
 	return (
 		<div className='footer is-paddingless is-size-7-mobile '>
@@ -33,7 +37,9 @@ const ComplexFooter = (props) => {
 						target='_blank'
 						rel='noopener noreferrer'
 						href='https://enhughesiasm.com/sbl'>
-						Based on The Shop Before Life
+						{width <= breakpoints.MOBILE
+							? 'Based on The Shop Before Life'
+							: 'Based on The Shop Before Life'}
 					</a>
 				</span>
 				<span>

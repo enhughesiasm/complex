@@ -150,7 +150,7 @@ body {
 	}
 
 	#complexGame {
-		margin-top: 2.5rem !important;
+		// margin-top: 2.5rem !important;
 
 		.tabs {
 			margin-bottom: 1.4rem;
@@ -433,10 +433,73 @@ body {
 	}
 
 	.footer {
-		height: 5vh !important;
 		position: fixed;
 		bottom: 0;
 		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	body {
+		padding-top: 0 !important;
+	}
+
+	.footer {
+		position: relative !important;
+	}
+	.footerContents {
+		flex-direction: column;
+		span {
+			margin-top: 0.3rem;
+		}
+	}
+	.traitBox {
+		min-height: 100vh;
+	}
+
+	body #complexGame .cardList .card .cost {
+		min-width: 1rem !important;
+	}
+
+	body
+		#complexGame
+		.cardList
+		.card
+		.card-content
+		.buttonContainer
+		.mainButton {
+		min-width: 1rem !important;
+		padding-left: 1rem !important;
+		padding-right: 1rem !important;
+		max-height: 2rem !important;
+	}
+
+	body #complexGame .cardList .card .power {
+		min-width: 1rem !important;
+	}
+
+	#complexNav {
+		min-height: fit-content !important;
+		max-height: auto !important;
+		position: relative !important;
+	}
+
+	.machineryCont {
+		flex-direction: column;
+	}
+
+	main {
+		margin-top: 4rem;
+	}
+
+	.navbar-brand {
+		min-height: fit-content !important;
+		max-height: auto !important;
+		flex-direction: column;
+	}
+
+	.navbar-item {
+		background: #363636 !important;
 	}
 }
 
