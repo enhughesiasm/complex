@@ -17,7 +17,7 @@ const ComplexFooter = (props) => {
 				<span>v{props.version}</span>
 				<span>
 					<button
-						class={
+						className={
 							'button ' +
 							(props.patchNotesActive ? 'is-danger' : 'is-dark')
 						}
