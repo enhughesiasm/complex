@@ -51,7 +51,7 @@ class ComplexNav extends React.Component {
 					aria-label='main navigation'>
 					<div className='navbar-brand'>
 						<a
-							href='https://enhughesiasm.com'
+							href='https://walkingoncustard.com'
 							className='navbar-item'
 							activeclassname='active'
 							target='_blank'
@@ -59,14 +59,14 @@ class ComplexNav extends React.Component {
 							<div
 								onClick={this.onNavLinkClicked}
 								className='tooltip is-tooltip-right is-tooltip-info'
-								data-tooltip='return to enhughesiasm.com'>
+								data-tooltip="exit to the developer's homepage">
 								<h1
 									className='is-size-1 has-text-weight-bold'
 									style={{
 										fontFamily:
 											'"Jost*", "Helvetica Neue", Helvetica, Arial, sans-serif',
 									}}>
-									e
+									🏠
 								</h1>
 							</div>
 						</a>

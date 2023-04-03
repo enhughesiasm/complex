@@ -72,7 +72,7 @@ export default class FirstLoad extends React.Component {
 						style={{ marginTop: '.2rem' }}>
 						Based on{' '}
 						<a
-							href='https://enhughesiasm.com/sbl'
+							href='https://walkingoncustard.com/sbl'
 							target='_blank'
 							rel='noopener noreferrer'>
 							The Shop Before Life

@@ -36,7 +36,7 @@ const ComplexFooter = (props) => {
 						className='button is-light is-small'
 						target='_blank'
 						rel='noopener noreferrer'
-						href='https://enhughesiasm.com/sbl'>
+						href='https://walkingoncustard.com/sbl'>
 						{width <= breakpoints.MOBILE
 							? 'Based on The Shop Before Life'
 							: 'Based on The Shop Before Life'}

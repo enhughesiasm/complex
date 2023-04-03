@@ -141,7 +141,7 @@ export default class WinScreen extends React.Component {
 						<br />
 						<p>
 							<a
-								href='https://enhughesiasm.com/sbl'
+								href='https://walkingoncustard.com/sbl'
 								target='_blank'
 								rel='noopener noreferrer'>
 								<button className='button is-size-6-mobile is-medium is-success'>
