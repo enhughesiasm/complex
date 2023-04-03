@@ -1,4 +1,6 @@
-#A game about making human traits for a magical shop everyone visits before being born.
+# The Supplier's Complex
+
+A game about making human traits for a magical shop everyone visits before being born.
 
 See <https://enhughesiasm.com/complex>
 
