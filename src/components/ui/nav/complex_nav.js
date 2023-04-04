@@ -58,10 +58,11 @@ class ComplexNav extends React.Component {
 							rel='noopener noreferrer'>
 							<div
 								onClick={this.onNavLinkClicked}
-								className='tooltip is-tooltip-right is-tooltip-info'
+								className='tooltip is-tooltip-right is-tooltip-info is-flex is-align-items-center'
+								style={{ position: 'relative', top: '0.3rem' }}
 								data-tooltip="exit to the developer's homepage">
 								<h1
-									className='is-size-1 has-text-weight-bold'
+									className='is-size-4 has-text-weight-bold'
 									style={{
 										fontFamily:
 											'"Jost*", "Helvetica Neue", Helvetica, Arial, sans-serif',
