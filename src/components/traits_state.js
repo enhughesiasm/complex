@@ -14,7 +14,7 @@ import bulmaQuickview from 'bulma-extensions/bulma-quickview/dist/js/bulma-quick
 import initialValues from './save_data/initial_values';
 import debugValues from './save_data/debug_values';
 
-const version = '0.9.3';
+const version = '0.9.4';
 const tickLengthMs = 20;
 const debug = true && process.env.NODE_ENV === 'development';
 
@@ -106,9 +106,8 @@ const traitsState = {
 		for (let builtMachineType in traitsState.machinesBuilt) {
 			let amount = traitsState.machinesBuilt[builtMachineType];
 			if (amount > 0) {
-				traitsState.getMachineByType(
-					builtMachineType
-				).builtAmount += amount;
+				traitsState.getMachineByType(builtMachineType).builtAmount +=
+					amount;
 
 				// reallocate workers for maximum efficiency
 				let workers = traitsState.getEmployeeByType(
